@@ -3,3 +3,6 @@ From a dictionary make a defined report in excel with year and months as columns
 An input dictionary might look like this:
 
 ![206311759-f7aec9e7-307b-441f-aa8e-b5c2749808e8](https://user-images.githubusercontent.com/53232113/206321369-9cd8ea81-1938-4907-bc09-e3737816e538.png)
+
+With this dictionary as input, the requirement is to have a report in excel with the following format:
+
