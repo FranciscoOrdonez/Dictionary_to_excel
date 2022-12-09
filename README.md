@@ -6,3 +6,5 @@ An input dictionary might look like this:
 
 With this dictionary as input, the requirement is to have a report in excel with the following format:
 
+https://user-images.githubusercontent.com/53232113/206751543-cb2e1104-d74e-4f56-8e07-051040d77f68.png
+
