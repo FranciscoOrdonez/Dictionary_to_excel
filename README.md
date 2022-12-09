@@ -5,6 +5,6 @@ An input dictionary might look like this:
 ![206311759-f7aec9e7-307b-441f-aa8e-b5c2749808e8](https://user-images.githubusercontent.com/53232113/206321369-9cd8ea81-1938-4907-bc09-e3737816e538.png)
 
 With this dictionary as input, the requirement is to have a report in excel with the following format:
+![206751543-cb2e1104-d74e-4f56-8e07-051040d77f68](https://user-images.githubusercontent.com/53232113/206757804-30192f49-c2f3-4f48-a9cc-d93b3b8a5665.png)
 
-https://user-images.githubusercontent.com/53232113/206751543-cb2e1104-d74e-4f56-8e07-051040d77f68.png
 
