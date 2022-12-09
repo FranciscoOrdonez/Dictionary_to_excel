@@ -1,0 +1,91 @@
+import csv
+import random
+import pandas as pd
+#CREATE THE DICTIONARY AS INPUT
+dict2 = {'2021':{'04':{'30':'21915.70'},'05':{'06':'7615.70','07':'7596.82','31':'8771.82'},
+                '06':{'10':'77311.82','11':'57222.14','12':'37222.14',
+                      '13':'37204.44','14':'17016.44','15':'7039.24','16':'7015.64','28':'11956.64','30':'3130.64'},
+                '07':{'01':'3107.04','31':'4282.04'},
+                '08':{'31':'5456.04'},
+                '09':{'12':'5438.34','27':'6612.34'},
+                '10':{'12':'2612.34','13':'2579.30','25':'66947.30','26':'6900.10','27':'6852.90','28':'2852.90',
+                      '31':'4067.90'},
+                '11':{'01':'67.90','10':'2067.90','30':'3242.90'},
+                '12':{'02':'2763.90','10':'2610.40','11':'2598.70','31':'3773.70'}},
+         '2022':{'01':{'03':'1473.70','31':'2647.70'},
+                 '02':{'08':'6648.70','10':'2648.70','14':'648.70','23':'3691069.70','24':'421010.70',
+                       '25':'21010.70','26':'5010.70','28':'6143.70'},
+                 '03':{'07':'18343.70','10':'8343.70','13':'8326.00','26':'9502.00'}}}
+#
+#INITIALIZE LISTS, DICTIONARIES AND                  
+list_year = ['']
+list_month = ['']
+dict_month = {'01':'JAN','02':'FEB','03':'MAR','04':'APR','05':'MAY','06':'JUN','07':'JUL','08':'AUG',
+             '09':'SEP','10':'OCT','11':'NOV','12':'DIC'}
+list_10 = ['BALANCE AS ON 10TH']
+list_20 = ['BALANCE AS ON 20TH']
+list_30 = ['BALANCE AS ON LAST DAY']
+# Open the csv file for writing
+with open('dict_To_Excel.csv', 'w') as fileObj:
+    # Creater a CSV writer object
+    writerObj = csv.writer(fileObj)
+    # Add  rowS as the list
+    #CREATE FIRST LOOP FOR DICTIONARY: I = YEAR, J= REST OF DICTIONARY WITH MONTHS AND DAYS
+    for i,j in dict2.items():
+        val_temp = 0.0
+    #CREATE SECOND LOOP OF DICTIONARY WITH K= MONTH AND L THE DAYS
+        for k,l in j.items():
+        #APPEND ON LIST_YEAR THE YEAR
+            list_year.append(i)
+        #APPEND ON LIST_MONTH THE MONTH
+            list_month.append(dict_month[k])
+            val_10 = 0.0
+            val_20 = 0.0
+            val_30 = 0.0
+            #val_temp = 0.0
+            #CREATE A THIRD LOOP WITH M=DAYS AND N THE VALUES FOR EACH DAY
+            for m,n in l.items():
+                if int(m) <= 10:
+                    val_10 =  float(n)
+                
+                elif int(m)>10 and int(m)<=20:
+                    val_20 = float(n)
+                
+                elif int(m)<32 and int(m)>20:
+                    val_30 = float(n)
+                
+            if val_10 == 0.0:
+                val_10 = val_temp
+            if val_20 == 0.0:
+                val_20 = val_10
+            if  val_30 == 0.0:
+                val_30 = val_20
+            val_temp = val_30  
+        
+            #APPEND THE LISTS, LESS THAN 10, BETWEEN 10 AND 20 AND LESS THAN 32 DAYS
+            list_10.append(val_10)
+            list_20.append(val_20)
+            list_30.append(val_30)
+    
+    
+    
+    #write into csv file the year, the month, and list10,20,30
+    writerObj.writerow(list_year)
+    writerObj.writerow(list_month)
+    writerObj.writerow(list_10)
+    writerObj.writerow(list_20)
+    writerObj.writerow(list_30)    
+
+#finally, read the csv file with the first two lines as header and the first columns as index
+df = pd.read_csv('dict_To_Excel.csv',
+    
+    header=[0,1],
+    index_col=[0]             
+).sort_index()
+#to check the df dataframe .. print it
+print(df)
+
+#write the dataframe df into excel file "finalExcel.xlsx"
+df.to_excel('finalExcel.xlsx')
+
+#now open excel file: finalExcel.xls to check the results
