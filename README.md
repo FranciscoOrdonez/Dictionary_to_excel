@@ -7,4 +7,5 @@ An input dictionary might look like this:
 With this dictionary as input, the requirement is to have a report in excel with the following format:
 ![206751543-cb2e1104-d74e-4f56-8e07-051040d77f68](https://user-images.githubusercontent.com/53232113/206757804-30192f49-c2f3-4f48-a9cc-d93b3b8a5665.png)
 
+The approach to get the excel report from a three dimension dictionary is to loop the dictionary to get the information from year, month and amount for date, and arrange so the csv file has the correct information, and finally read the csv file into a frame and use the command: 'df_to_excel(name_excel_file)' to pass the information to an excel file.  Finally open the excel file and get the results.
 
