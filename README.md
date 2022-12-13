@@ -8,4 +8,5 @@ With this dictionary as input, the requirement is to have a report in excel with
 ![206751543-cb2e1104-d74e-4f56-8e07-051040d77f68](https://user-images.githubusercontent.com/53232113/206757804-30192f49-c2f3-4f48-a9cc-d93b3b8a5665.png)
 
 The approach to get the excel report from a three dimension dictionary is to loop the dictionary to get the information from year, month and amount for date, and arrange so the csv file has the correct information, and finally read the csv file into a frame and use the command: 'df_to_excel(name_excel_file)' to pass the information to an excel file.  Finally open the excel file and get the results.
+![207434282-ecdb04c1-1516-418a-875c-29632ff4a163](https://user-images.githubusercontent.com/53232113/207434504-ce9f847f-260f-479e-ab04-2e679302fada.png)
 
