@@ -19,6 +19,9 @@ The approach to get the excel report from a three dimension dictionary is to loo
 7. Append values for 10th, 20th, and final days.  The the lists are appended for every month in the dictionary.  
 8. Write in csv file year, month and values for days.  The values appended in year, month and 10th, 20th, and final days are written in the csv file.
 9. Read csv file into dataframe df.   Once the information of the dictionary is collected in five rows of the csv file(year, month, 10th day, 20th. day and final day), the file is read and converted into a dataframe df.  At this point the information of the dictionary is now in a pandas dataframe.
-10. Create header for year and month.  Now, there is a way to create a header with the first two lines of the dataframe and the index for the first column, so 
+10. Create header for year and month.  Now, there is a way to create a header with the first two lines of the dataframe,so the first line is the year, and the second line is the month.
+11.  Create index for first column. The first column is the description of lists: 'BALANCE AS ON 10TH', 'BALANCE AS ON 20TH'  and 'BALANCE AS ON LAST DAY'.
+12.  Send dataframe to excel.  With the header and index created and the information of the dataframe, the data is moved from the dataframe to a created excel file.
+13.  Open excel file and check results.  Here we go to excel, open the created file, and get the results. There are five lines on the file, two are the headers with year and month, and the last three are the results per month of balances as on 10th. day, balances as on 20th. day, and balance as on last day of the month, as shown above.
 
 
