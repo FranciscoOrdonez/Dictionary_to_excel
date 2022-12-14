@@ -24,4 +24,4 @@ The approach to get the excel report from a three dimension dictionary is to loo
 12.  Send dataframe to excel.  With the header and index created and the information of the dataframe, the data is moved from the dataframe to a created excel file.
 13.  Open excel file and check results.  Here we go to excel, open the created file, and get the results. There are five lines on the file, two are the headers with year and month, and the last three are the results per month of balances as on 10th. day, balances as on 20th. day, and balance as on last day of the month, as shown above.
 
-The code information of this project is shown [here](code/code).
+The code information of this project is shown [here](code).
